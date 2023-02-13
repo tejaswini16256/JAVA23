@@ -77,5 +77,31 @@ import javax.swing.*;
           }
           tls.add(amt);
      }
+     void withdrow()
+     {
+        int amt=0;
+          try
+          {
+            amt= Integer.parseInt(JOptionPane.showInputDialog(null, "withdrow amount"));
+
+          }
+          catch(Exception e)
+          {
+            amt=-1;
+
+          }
+          if(amt<=0)
+          {
+            JOptionPane.showMessageDialog(null,"invalid");
+            return;
+          }
+          int bal = balEnd() - amt;
+          if(bal<=500)
+          {
+            JOptionPane.showMessageDialog(null, "below 500");
+            return;
+          }
+          tls.add(-amt);
+     }
     
 }
